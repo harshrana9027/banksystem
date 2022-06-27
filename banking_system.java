@@ -21,6 +21,7 @@ public class banking_system
         JButton b1=new JButton("CREDIT");
         JButton b2=new JButton("DEBIT");
         JButton b3=new JButton("CHECK BALANCE");
+        JButton b4=new JButton("TRANSFER");
         
         
         l.setBounds(100,100,400,50);
@@ -28,10 +29,11 @@ public class banking_system
         jt.setBounds(220,200,200,50);
         b1.setBounds(100,340,160,50);
         b2.setBounds(100,430,160,50);
-        b3.setBounds(100,520,160,50);
+        b3.setBounds(300,430,160,50);
+        b4.setBounds(300,340,160,50);
         
         
-        f.add(l);f.add(jt);f.add(l1);f.add(b1);f.add(b2);f.add(b3);
+        f.add(l);f.add(jt);f.add(l1);f.add(b1);f.add(b2);f.add(b3);f.add(b4);
         
         b1.addActionListener(new ActionListener()
         {
@@ -139,15 +141,62 @@ public class banking_system
             public void actionPerformed(ActionEvent e)
             {
                 JFrame f=new JFrame("BALANCE");
-                JLabel l1=new JLabel();
+                JLabel jl=new JLabel("BALANCE IS : 500000");
                 
-                l1.setBounds(100,200,170,50);
-                
-                f.add(l1);
+                f.add(jl);
+                jl.setBounds(100,200,180,60);
                 
                 f.setSize(600,700);
                 f.setLayout(null);
                 f.setVisible(true);
+            }
+            
+        });
+        
+        b4.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                JFrame f=new JFrame("TRANSFER");
+                JTextField jt1=new JTextField();
+                JTextField jt2=new JTextField();
+                JLabel l1=new JLabel("enter the sender account number : ");
+                JLabel l2=new JLabel("enter the reciever account number : ");
+                JButton b=new JButton("SEND");
+                
+                l1.setBounds(70,120,250,50);
+                l2.setBounds(70,180,250,50);
+                jt1.setBounds(300,120,200,50);
+                jt2.setBounds(300,190,200,50);
+                b.setBounds(200,340,150,50);
+                
+                f.add(jt1);f.add(jt2);f.add(l1);f.add(l2);f.add(b);
+                f.setSize(600,700);
+                
+                b.addActionListener(new ActionListener()
+                {
+                    public void actionPerformed(ActionEvent e)
+                    {
+                        JFrame f=new JFrame();
+                        JLabel l=new JLabel();
+                        
+                        int an=372400;
+                        
+                       // if()
+                        
+                        f.add(l);
+                        
+                        f.setSize(600,700);
+                        f.setLayout(null);
+                        f.setVisible(true);
+                        
+                    }
+                    
+                });
+                
+                f.setLayout(null);
+                f.setVisible(true);
+                
             }
             
         });
